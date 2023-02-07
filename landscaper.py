@@ -14,27 +14,27 @@ tools = [
 
 def mow_lawn():
     tool = tools[game["tool"]]
-    print(f"You mowed a lawn with your {tool['name']} and make {tool['profit']}")
+    print(f"You mowed a lawn with your {tool['name']} and made ${tool['profit']}.")
     game["money"] += tool["profit"]
 
 def check_stats():
     tool = tools[game["tool"]]
-    print(f"You currently have {game['money']} and are using {tool['name']}")
+    print(f"You currently have ${game['money']} and are using {tool['name']}.")
     
 def upgrade():
     next_tool = tools[game["tool"]+1]
     if (next_tool == None):
-        print("There is no more tools")
+        print("There are no more tools!")
         return 0
     if (game["money"] < next_tool["cost"]):
-        print("Not enough to buy tool")
+        print("Not enough money to buy tool!")
         return 0
     game["money"] -= next_tool["cost"]
     game["tool"] += 1
     
 def win_check():
     if(game["tool"] == 4 and game["money"] >= 1000):
-        print(f"You Win! You ended with {game['money']} dollars!")
+        print(f"You Win! You ended with ${game['money']} dollars!")
         return True
     return False  
     
