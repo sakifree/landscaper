@@ -34,7 +34,7 @@ def upgrade():
     
 def win_check():
     if(game["tool"] == 4 and game["money"] >= 1000):
-        print(f"You Win! You ended with {game['money']} dollars!git ")
+        print(f"You Win! You ended with {game['money']} dollars!")
         return True
     return False  
     
